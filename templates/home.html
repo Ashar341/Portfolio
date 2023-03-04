@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %} 
+<!-- Defininedo colores-->
+
+<div class="bg-success p-2 text-dark bg-opacity-10 border border-opacity-15">
+    <div class="mb-3 col-md-10 offset-md-1 ">
+        <h1 class="display-2">
+            This is my personal page where I cand practice Django an use it
+            as a portafolio
+        </h1>
+        <div class="mb-3 lead">
+            All here belongs to Daniel Loya
+        </div>
+    <hr>
+        <div class="">
+            <h2>Summmary</h2>
+            <div class="m-2">
+                <p class="card-text">Máster en Ciencias y Tecnología Ambiental del CIMAV, Ingeniero Químico de la UACH. Dos años de experiencia en laboratorio de control de calidad del aire, 10 meses de experiencia como técnico en informática, seis meses de experiencia en industria manufacturera médica. Mas de 5 años en procesos de investigación como Investigador asociado. Certificado en ISO 9001:2015, ISO 14001:2015, Six Sigma Green Belt y Manejo de residuos peligrosos. Estudios en diseño CAD por SolidWorks y AutoCAD, Control de Procesos con Minitab (DOE, ANOVA, CpK, SPC), lenguajes de programación (SQL, Python y Java)</p>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-3 col-md-10 offset-md-1">
+    <div class="mb-3 col-md-10 offset-md-1">
+        <h2>Next you could see programs developed for me or that are under construcction </h2>
+    </div>
+    <!-- Para introducir el carrusel-->
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-3 col-md-10 offset-md-1 shadow-sm p-3 mb-5 bg-body rounded" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <a href="{% url 'resume_view' %}">
+              <img src="https://www.picpedia.org/highway-signs/images/professional-development.jpg" class="d-block w-100" width="600" height="500" alt="Resume">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Professional Resume</h5>
+              <p class="display-6">Professional Resume with all the experience</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'blogbase' %}">
+                <img src="https://www.capitalism.com/wp-content/uploads/2020/01/Depositphotos_208504732_l-2015-1024x684.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Blog</h5>
+              <p class="display-6">Blog Web page with multiple entries</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'translator_view' %}">
+                <img src="https://fotografias-compromiso.atresmedia.com/clipping/cmsimages02/2021/03/10/049EBCEB-5627-4D97-8BA0-64CD49438CF1/58.jpg" class="d-block w-100" width="600" height="500" alt="Translator">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Translator</h5>
+              <p class="display-6">An online translator for different languages</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'thesaurus_view' %}">
+                <img src="https://www.collinsdictionary.com/images/full/thesaurus_23868640.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Thesaurus</h5>
+              <p class="display-6">A thesaurus web page were you can obtain sinonims</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr class="mb-3 col-md-10 offset-md-1">
+      <div class="mb-3 col-md-10 offset-md-1">
+        <h5 class="display-5">
+            Contact
+            <p class="display-6">
+
+            </p>
+        </h5>
+      </div>
+</div>
+{% endblock content %}
