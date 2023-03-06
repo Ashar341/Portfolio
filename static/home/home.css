@@ -1,0 +1,33 @@
+
+  body {
+    background-color: rgb(185, 197, 197);
+  }
+
+  .top-part{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .image, .content{
+      display: inline-block;
+      width: 50%;
+      border: 1px solid black;
+  }
+
+  .image {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .content {
+    background-color: yellow;
+  }
