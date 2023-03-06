@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+        .blogInfo{
+                padding: 30px;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                border: 2px solid black;
+        }
+        
+        .back-button{
+                margin-top: 10px;
+        }
+</style>
+
+<div class="blogInfo">
         <h1>{{object.title}}</h1>
         <p>{{object.content}}</p>
         <p>{{object.author}}</p>
+        <button class="btn btn-primary back-button" onclick="history.back()">Back</button>
+
+</div>
+        
 {% endblock content %}

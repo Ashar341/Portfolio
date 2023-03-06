@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<style>
+    .mb-3{
+        text-align: center;
+        justify-content: center;
+    }
+    .form-label{
+        font-weight: bold;
+    }
+</style>
 <div class="container">
-    <h1 class="mb-3"> An simple Thereasurus programm</h1>
+    <h1 class="mb-3"> A simple Thereasurus program</h1>
     <form action="{% url 'thesaurus_view' %}" method="post">
         {% csrf_token %}
         <div class="row">

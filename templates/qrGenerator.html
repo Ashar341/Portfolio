@@ -4,7 +4,6 @@
             
 
             .body{
-                background: antiquewhite;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 
                 align-items: center;
@@ -24,7 +23,7 @@
                 background: #fff;
                 display: flex;
                 align-items: center;
-                border: 5px solid black;
+                border: 2px solid black;
                 box-shadow: 0 0 15px gray;
                 flex-direction: column;
             }
@@ -66,11 +65,11 @@
                 let QRtext = document.querySelector("#text").value;
                 if(QRtext.trim().length == 0){
                     document.querySelector("#qr-image .error").innerHTML = "Please enter some text";
-                    document.querySelector("#img").style.display = "none";
+                    document.querySelector("#imagen").style.display = "none";
                 } else {
-                    document.querySelector("#img").style.display = "block";
+                    document.querySelector("#imagen").style.display = "block";
                     document.querySelector("#qr-image .error").innerHTML = "";
-                    document.querySelector("img").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + QRtext;
+                    document.querySelector("#imagen").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + QRtext;
 
                 }
             }
@@ -88,7 +87,7 @@
 
             <div id="qr-image">
                 <span class="error"></span> <br/>
-                <img src="" id="img" />
+                <img src="" id="imagen" />
             </div>
         </div>
     </div>

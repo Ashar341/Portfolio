@@ -11,18 +11,20 @@
 <style>
   body {
     background-color: #9fa8da;
-    font-family: 'Times New Roman', Times, serif;
   }
 
   .top-part{
     display: flex;
     flex-direction:row;
     min-height: 400px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   
   .image {
-    background-color: #3949ab;
+    background-color: rgb(184, 255, 247);
+    background: radial-gradient(circle at center,rgba(184, 255, 247, 0.5) 0%, rgba(255,255, 255, 0) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +64,6 @@
     }
   }
   .content {
-    background-color: #ffb300;
     width: 50%;
   }
 
@@ -70,22 +71,55 @@
     text-align: justify;
   }
 
+  .intro{
+    text-align: justify;
+    font-weight: bold;
+    background: linear-gradient(to bottom, rgb(184, 255, 247), rgb(218, 253, 248));
+    font-size: large;
+
+  }
+
+  .intro > h2{
+    text-align: center;
+  }
   .sublime{
     text-align: center;
   }
 
+  .middle-part{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .title_apps{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 20px;
+    
+  }
   .bottom{
+    
+    align-items: center;
+    align-content: center;
     background-color: #ffb300;
   }
 
   .contact{
     background-color: #fdd835;
+    
+    
   }
 
   .contact-bottom{
     display:flex;
     flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: larger;
     background-color: #283593;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
   }
 
   .contact-bottom > p {
@@ -110,6 +144,8 @@
     width: 50%;
     align-items: end;
     align-content: flex-end;
+    
+    padding-bottom: 25px;
   }
 
   .media span {
@@ -133,28 +169,32 @@
           I am Jesus Loya and this is my first portfolio
         </h1>
       </div>
-
-      <div class="intro">
-        <h2>Presentation</h2>
-          <div class="m-2">
-            <p class="card-text">
-              My name is Jesus and I hold a Bachelor's Degree in Chemical Engineering, as well as a Master's Degree. I'm passionate about many different fields, including environmentalism, quality control, and computer science.
-
-I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
-
-I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
-            </p>
-          </div>
-      </div>
-
     </div>
     
   </div>
   <hr class="mb-3 col-md-10 offset-md-1">
-  <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
+  <div class="intro">
+    <h2>Presentation</h2>
+      <div class="m-2">
+        <p class="card-text">
+          My name is Jesus and I hold a Bachelor's Degree in Chemical Engineering, as well as a Master's Degree. I'm passionate about many different fields, including environmentalism, quality control, and computer science.
+
+I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
+
+I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
+        </p>
+        <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
+      </div>
+  </div>
+  
   <hr class="mb-3 col-md-10 offset-md-1">
   <div class="middle-part">
     <div class="middle-part">
+      <div>
+        <h2 class="title_apps">
+          App developed by me until the momment
+        </h2>
+      </div>
       <!-- Para introducir el carrusel-->
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
           <div class="carousel-indicators">
@@ -221,9 +261,13 @@ I'm always eager to expand my knowledge and skills, and am excited to continue e
       </p>
       <div class="media">
         <div class="call"><a href="tel: 614-213-9092"><i class="fas fa-phone"></i><span>614-213-9092</span></a></div>
+        <br>
         <div class="adress"><a href="https://www.google.com.mx/maps/place/Chihuahua,+Chih./@28.6710638,-106.134658,12z/data=!3m1!4b1!4m5!3m4!1s0x86ea449d5d484033:0xb7f1a7a706dd1d7b!8m2!3d28.6329957!4d-106.0691004"><i class="fas fa-map-marker"></i><span>Chihuahua,Mexico</span></a></div>
+        <br>
         <div class="email"><a href="danilloya341@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a></div>
+        <br>
         <div class="website"><a href="https://www.linkedin.com/in/jesus-daniel-loya-ramirez-604061151/"><i class="fas fa-home"></i><span>LinkedIn</span></a></div>
+        <br>
       </div>
 
     </div>

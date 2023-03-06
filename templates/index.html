@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<style>
+    .titulo{
+        text-align: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+</style>
+        <h2 class="titulo">
+            Personal Blog
+        </h2>
         <div class="container">
             {% for post in post_list %}
                 <div class="card m-3">
