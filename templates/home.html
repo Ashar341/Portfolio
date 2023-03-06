@@ -10,14 +10,14 @@
 
 <style>
   body {
-    background-color: rgb(185, 197, 197);
+    background-color: #9fa8da;
     font-family: 'Times New Roman', Times, serif;
   }
 
   .top-part{
     display: flex;
     flex-direction:row;
-    padding: 20px;
+    min-height: 400px;
   }
 
   
@@ -73,6 +73,50 @@
   .sublime{
     text-align: center;
   }
+
+  .bottom{
+    background-color: #ffb300;
+  }
+
+  .contact{
+    background-color: #fdd835;
+  }
+
+  .contact-bottom{
+    display:flex;
+    flex-direction: row;
+    background-color: #283593;
+  }
+
+  .contact-bottom > p {
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    text-size-adjust: 18px;
+    text-align: justify;
+    width: 50%
+    
+  }
+
+  #contact{
+    justify-content: center;
+    text-align: center;
+  }
+  .media{
+    color: white;
+    text-decoration: solid;
+    text-align: right;
+    background-color: #3949ab;
+    width: 50%;
+    align-items: end;
+    align-content: flex-end;
+  }
+
+  .media span {
+    color: white;
+  }
+
+
 </style>
 
 <div class="body">
@@ -94,9 +138,11 @@
         <h2>Presentation</h2>
           <div class="m-2">
             <p class="card-text">
-              I'm Jesus, and have a bachelor degre on Chemical Enginner, besides a Master Degree. It's sounds crazy but I have also knowledge
-              on code, like this portfolio that I create from scratch using Django. I have many interest and skills, like enviromental, quality
-              control and computer science.
+              My name is Jesus and I hold a Bachelor's Degree in Chemical Engineering, as well as a Master's Degree. I'm passionate about many different fields, including environmentalism, quality control, and computer science.
+
+I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
+
+I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
             </p>
           </div>
       </div>
@@ -110,38 +156,44 @@
   <div class="middle-part">
     <div class="middle-part">
       <!-- Para introducir el carrusel-->
-      <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-3 col-md-10 offset-md-1 shadow-sm p-3 mb-5 bg-body rounded" data-bs-ride="false">
+      <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
               <a href="{% url 'resume_view' %}">
-                <img src="https://www.picpedia.org/highway-signs/images/professional-development.jpg" class="d-block w-100" width="600" height="500" alt="Resume">
+                <img src="https://as2.ftcdn.net/v2/jpg/02/42/15/27/1000_F_242152790_eITHdgyD7AR6rhzMwWrukyCyMNPmzS8U.jpg" class="d-block w-100" width="600" height="500" alt="Resume">
               </a>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-4">Professional Resume</h5>
-                <p class="display-6">Professional Resume with all the experience</p>
               </div>
             </div>
             <div class="carousel-item">
               <a href="{% url 'blogbase' %}">
-                  <img src="https://www.capitalism.com/wp-content/uploads/2020/01/Depositphotos_208504732_l-2015-1024x684.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
+                  <img src="https://akus.b-cdn.net/imagenes/articulos/blog.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
               </a>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-4">Blog</h5>
-                <p class="display-6">Blog Web page with multiple entries</p>
               </div>
             </div>
             <div class="carousel-item">
               <a href="{% url 'thesaurus_view' %}">
-                  <img src="https://www.collinsdictionary.com/images/full/thesaurus_23868640.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
+                  <img src="https://www.collinsdictionary.com/images/full/thesaurus_23868640.jpg" class="d-block w-100" width="600" height="500" alt="thesaurus">
               </a>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-4">Thesaurus</h5>
-                <p class="display-6">A thesaurus web page were you can obtain sinonims</p>
+              </div>
+            </div>
+            <div class="carousel-item" >
+              <a href="{% url 'qrGenerator_view' %}">
+                <img src="https://1757140519.rsc.cdn77.org/blog/wp-content/uploads/sites/4/2020/04/qr_vs_line_code.png" class="d-block w-100" width="600" height="500" alt="qrGenerator">
+              </a>
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="display-4">QR Code Generator</h5>
               </div>
             </div>
           </div>
@@ -160,11 +212,22 @@
   </div>
 
   <div class="bottom">
-    <h5 class="display-5">
+    <h5 class="display-5" id="contact">
       Contact
-      <p class="display-6">
-      </p>
     </h5>
+    <div class="contact-bottom">
+      <p class="display-8">
+        If you want to reach me you can try to use any of the next media:
+      </p>
+      <div class="media">
+        <div class="call"><a href="tel: 614-213-9092"><i class="fas fa-phone"></i><span>614-213-9092</span></a></div>
+        <div class="adress"><a href="https://www.google.com.mx/maps/place/Chihuahua,+Chih./@28.6710638,-106.134658,12z/data=!3m1!4b1!4m5!3m4!1s0x86ea449d5d484033:0xb7f1a7a706dd1d7b!8m2!3d28.6329957!4d-106.0691004"><i class="fas fa-map-marker"></i><span>Chihuahua,Mexico</span></a></div>
+        <div class="email"><a href="danilloya341@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a></div>
+        <div class="website"><a href="https://www.linkedin.com/in/jesus-daniel-loya-ramirez-604061151/"><i class="fas fa-home"></i><span>LinkedIn</span></a></div>
+      </div>
+
+    </div>
+    
   </div>
 
 </div>

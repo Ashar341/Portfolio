@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block content %}
+        <style>
+            
+
+            .body{
+                background: antiquewhite;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .title{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 15px;
+                padding-top: 15px;
+            }
+            .container{
+                padding: 40px 60px;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                border: 5px solid black;
+                box-shadow: 0 0 15px gray;
+                flex-direction: column;
+            }
+
+            .input{
+                padding: 12px 20px;
+                width: 300px;
+                margin-bottom: 20px;
+            }
+
+            button{
+                padding: 12px 20px;
+                margin-bottom: 20px;
+                border: 0;
+                background: #485696;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 2px;
+            }
+
+            button:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            #qr-image {
+                display: none;
+            }
+
+            img{
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <script>
+            function generatorQR() {
+                document.querySelector("#qr-image").style.display = "block";
+                let QRtext = document.querySelector("#text").value;
+                if(QRtext.trim().length == 0){
+                    document.querySelector("#qr-image .error").innerHTML = "Please enter some text";
+                    document.querySelector("#img").style.display = "none";
+                } else {
+                    document.querySelector("#img").style.display = "block";
+                    document.querySelector("#qr-image .error").innerHTML = "";
+                    document.querySelector("img").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + QRtext;
+
+                }
+            }
+        </script>
+
+    <div class="body">
+        <div class="title">
+            <h2>A QR code generator according to an Input</h2>
+        </div>
+
+
+        <div class="container">
+            <input type="text" id="text" placeholder="Input text to generate QR code" class="input">
+            <button type="button" onclick="generatorQR()">Generate QR code</button>
+
+            <div id="qr-image">
+                <span class="error"></span> <br/>
+                <img src="" id="img" />
+            </div>
+        </div>
+    </div>
+        
+
+
+    
+
+{% endblock content %}

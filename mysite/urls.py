@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('resume/', include('resume.urls')),
     path('thesaurus/', include('thesaurus.urls')),
+    path('qrGenerator/',include('qrGenerator.urls'))
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
