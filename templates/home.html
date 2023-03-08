@@ -9,8 +9,69 @@
 <link rel="stylesheet" type="text/css" href="{% static '/static/home/home.css' %}">
 
 <style>
-  body {
-    background-color: #9fa8da;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .body {
+    width: 100%;
+    height: 100%;
+    /* CSS smooth*/
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
+
+  section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+  }
+
+  .container{
+    justify-content: center;
+    align-items: center;
+  }
+  .navarToErase {
+    position: sticky;
+    top: 20;
+    padding-top: 20;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(240, 233, 233);
+  }
+
+  .navarToErase ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navarToErase ul li {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  .navarToErase ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
   }
 
   .top-part{
@@ -34,8 +95,8 @@
 
   .photo {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
     border: 3.5px solid black;
@@ -44,8 +105,8 @@
 
   .bckgroung{
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     object-fit: cover;
     z-index: 1;
@@ -65,18 +126,22 @@
   }
   .content {
     width: 50%;
+    color: rgb(205, 203, 223);
+    font-weight: bolder;
   }
 
   .content > .m-2 {
     text-align: justify;
+    
+    
   }
 
   .intro{
     text-align: justify;
     font-weight: bold;
-    background: linear-gradient(to bottom, rgb(184, 255, 247), rgb(218, 253, 248));
     font-size: large;
-
+    color: rgb(205, 203, 223);
+    background-color: linear-gradient(to bottom, red, blue);;
   }
 
   .intro > h2{
@@ -93,15 +158,15 @@
   .title_apps{
     text-align: center;
     font-weight: bolder;
-    color: white;
+    color: rgb(205, 203, 223);
     padding-bottom: 20px;
     
   }
+
   .bottom{
     
     align-items: center;
     align-content: center;
-    background-color: #ffb300;
   }
 
   .contact{
@@ -111,25 +176,16 @@
   }
 
   .contact-bottom{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    display:static;
     font-size: larger;
     background-color: #283593;
-    padding-bottom: 15px;
-    margin-bottom: 0px;
   }
 
   .contact-bottom > p {
-    color: white;
+    color: rgb(205, 203, 223);
     font-weight: bold;
     font-size: larger;
     text-size-adjust: 18px;
-    text-align: justify;
-    width: 50%
-    
   }
 
   #contact{
@@ -137,26 +193,38 @@
     text-align: center;
   }
   .media{
-    color: white;
+    color: rgb(205, 203, 223);
     text-decoration: solid;
     text-align: right;
     background-color: #3949ab;
-    width: 50%;
-    align-items: end;
-    align-content: flex-end;
-    
-    padding-bottom: 25px;
   }
 
   .media span {
-    color: white;
+    color: rgb(205, 203, 223);
   }
 
 
+  
 </style>
 
 <div class="body">
-  <div class="top-part">
+
+  <div class="container">
+    <nav class="navarToErase">
+    
+      <ul>
+        <li><a href="##top-part">Top</a></li>
+        <li><a href="##Intro" >Introduction</a></li>
+        <li><a href="##middle-part" >Apps</a></li>
+        <li><a href="##bottom-part" >Contact</a></li>
+      </ul>
+    
+    </nav>
+  </div>
+  
+
+
+  <section class="top-part" id="#top-part">
     
     <div class="image">
       <img src="/images/photo5131864922739812969 (1).jpg" alt="picture" class="photo">
@@ -171,24 +239,24 @@
       </div>
     </div>
     
-  </div>
-  <hr class="mb-3 col-md-10 offset-md-1">
-  <div class="intro">
+  </section>
+  
+  <section class="intro" id="#Intro">
     <h2>Presentation</h2>
       <div class="m-2">
         <p class="card-text">
           My name is Jesus and I hold a Bachelor's Degree in Chemical Engineering, as well as a Master's Degree. I'm passionate about many different fields, including environmentalism, quality control, and computer science.
 
-I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
+          I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
 
-I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
+          I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
         </p>
         <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
       </div>
-  </div>
+  </section>
   
   <hr class="mb-3 col-md-10 offset-md-1">
-  <div class="middle-part">
+  <section class="middle-part" id="#middle-part">
     <div class="middle-part">
       <div>
         <h2 class="title_apps">
@@ -249,9 +317,10 @@ I'm always eager to expand my knowledge and skills, and am excited to continue e
         <hr class="mb-3 col-md-10 offset-md-1">
         <div class="mb-3 col-md-10 offset-md-1">
       </div>
-  </div>
+    </div>
+  </section>
 
-  <div class="bottom">
+  <section class="bottom" id="#bottom-part">
     <h5 class="display-5" id="contact">
       Contact
     </h5>
@@ -272,7 +341,7 @@ I'm always eager to expand my knowledge and skills, and am excited to continue e
 
     </div>
     
-  </div>
+  </section>
 
 </div>
 {% endblock content %}

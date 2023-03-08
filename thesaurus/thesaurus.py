@@ -15,17 +15,6 @@ def thesaurus(text):
     elif text.upper() in data:
         return data[text.upper()]
     elif len(get_close_matches(text, data.keys())) > 0:
-        yn = input("Did you mean %s instead? Enter Y if yes, or N if no. " % get_close_matches(text, data.keys())[0])
-        if yn == "Y":
-            return data[get_close_matches(text, data.keys())[0]]
-        elif yn == "N":
-            for i in range(1,3):
-                yn = input("Did you mean %s instead? Enter Y if yes, or N if no. " % get_close_matches(text, data.keys())[i])
-                if yn == "Y":
-                    return data[get_close_matches(text, data.keys())[i]]
-                else:
-                    return "Definition not Found"
-        else:
-            return "Word does not exist. Please double check it."
+        return data[get_close_matches(text, data.keys())[0]]
     else:
         return "Word does not exist. Please double check it."
