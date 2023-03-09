@@ -3,6 +3,7 @@
 ## La ventaja de django es que se maneja como mantequilla las bases SQL
 
 ## ashar, danilloya341@gmail.com lalehexd1#
+## otro para entrar root Lalechexd1#
 ## managy.py startapp #name para crear nueva app
 
 ##  python .\manage.py makemigrations and migrate para guardar cambios
