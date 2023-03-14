@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 ## En este lugar nada mas defines las nuevas apps en installed apps y la ruta de los templates
 import os
-
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#python manage.py shellSECRET_KEY = 'django-insecure-s5^lr+x-n_-xs-4i_1=bgu9u1o)$_xpw!j+a7^*$ac)f98!dep'
+SECRET_KEY = 'django-insecure-xkl*4dicm!#tdv2f0dh7%wxlo$_r)#%hsrj!elo&*fsjc3c*y6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://fathomless-sands-08482.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -84,8 +83,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'database-portfolio',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -132,5 +135,3 @@ STATICFILES_DIR = (BASE_DIR / "static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
-django_heroku.settings(locals())
