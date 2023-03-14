@@ -26,3 +26,6 @@ default':
 
 Activar env
 env\Scripts\activate
+
+#Secret key
+8ulq_c0tg5-$8#33bs@ea-_t8e%pf8*8h@rl#0*dkb^!^q_g&+
