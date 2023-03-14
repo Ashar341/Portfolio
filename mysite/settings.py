@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 ## En este lugar nada mas defines las nuevas apps en installed apps y la ruta de los templates
 import os
+
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xkl*4dicm!#tdv2f0dh7%wxlo$_r)#%hsrj!elo&*fsjc3c*y6'
+SECRET_KEY = 'django-insecure-s5^lr+x-n_-xs-4i_1=bgu9u1o)$_xpw!j+a7^*$ac)f98!dep'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://fathomless-sands-08482.herokuapp.com/']
 
 
 # Application definition
@@ -131,3 +132,5 @@ STATICFILES_DIR = (BASE_DIR / "static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import django_heroku
+django_heroku.settings(locals())
