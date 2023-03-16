@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+it works
+
+<div class="container">
+    <div class="titulo">
+        <h2>A To-do List</h2>
+    </div>
+
+    <div class="agregar">
+        <input type="text" name="New task" class="input-to-list">
+        <button class="buttonAdd" type="button" name="Add to list">Add to List</button>
+
+    </div>
+
+    <div class="mostrarList">
+        <ul>
+            {% for item in my_list %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock content %}

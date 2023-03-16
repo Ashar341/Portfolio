@@ -5,4 +5,21 @@
 ## ashar, danilloya341@gmail.com lalehexd1#
 ## managy.py startapp #name para crear nueva app
 
+<<<<<<< Updated upstream
 ##  python .\manage.py makemigrations and migrate para guardar cambios
+=======
+##  python .\manage.py makemigrations and migrate para guardar cambios
+
+
+##Activar env
+ 
+ env\Scripts\activate
+
+sqlite3
+ 'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+
+Despues de varios intentos, la aplicacion funciono despues de varios intentos, pero ahorita esta desabilitada.
+Te costara 7 USD por mes, y tienes que habilitar el dyno para que funcione la app
+Sino quieres pagar intenta otra vez, en python anywhere y que dios te bendiga
+>>>>>>> Stashed changes
