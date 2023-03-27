@@ -1,18 +1,110 @@
 {% extends 'base.html' %}
 {% block content %}
-it works
-<<<<<<< HEAD
+
+<style>
+
+    .titulo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .addList{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 16px;
+        background-color:#303f9f;;
+    }
+
+    .addButton{
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+    }
+
+    .addButton:hover {
+        background-color: #bbb;
+    }
+    /* Remove margins and padding from the list */
+    .mostrarList ul {
+     margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Style the list items */
+.mostrarList ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+.mostrarList ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+.mostrarList ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+.mostrarList ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+.mostrarList ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+</style>
 
 <div class="container">
     <div class="titulo">
-        <h2>A To-do List</h2>
+        <h1>A To-Do List</h1>
     </div>
 
-    <div class="agregar">
-        <input type="text" name="New task" class="input-to-list">
-        <button class="buttonAdd" type="button" name="Add to list">Add to List</button>
-
+    
+    <div class="addList">
+        <form method="POST" action="{% url 'toDoList' %}">
+            {% csrf_token %}
+            <input type="text" name="item" placeholder="Enter new item">
+            <button class = 'addButton' type="submit">Add</button>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </form>
     </div>
+    
 
     <div class="mostrarList">
         <ul>
@@ -21,9 +113,8 @@ it works
             {% endfor %}
         </ul>
     </div>
+    
 </div>
 
 
-=======
->>>>>>> main
 {% endblock content %}
