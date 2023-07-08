@@ -19,10 +19,12 @@
             <div class="col-sm-6 mt-3 left">
                 <label class="form-label">Word</label>
                 <textarea class="form-control" name="my_textarea" rows="3" placeholder="Text to translate">{{original_text}}</textarea>
+                {% csrf_token %}
             </div>
             <div class="col-sm-6 mt-3 left">
                 <label class="form-label">Thereasurus</label>
                 <textarea class="form-control" rows="3" placeholder="Text Thereasurus">{{output_text}}</textarea>
+                {% csrf_token %}
                 <input class="btn btn-primary ml-3 mt-3" type="submit" value="Submit">    
                 
             </div>

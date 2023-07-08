@@ -138,6 +138,7 @@
                 <li class="itemList">
                     <span>{{ item }}</span>
                     <form method="GET" action="{% url 'toDoList' %}">
+                        {% csrf_token %}
                         <input type="hidden" name="remove_item" value="{{ item }}">
                         <button type="submit" class="removeButton">Remove</button>
                     </form>
@@ -145,6 +146,7 @@
             {% endfor %}
         </ul>
     </div>
+    
     
 
     
