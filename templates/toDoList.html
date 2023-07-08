@@ -35,58 +35,84 @@
     }
     /* Remove margins and padding from the list */
     .mostrarList ul {
-     margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
 
-/* Style the list items */
-.mostrarList ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
+    /* Style the list items */
+    .mostrarList ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
 
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+        /* make the list items unselectable */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-.mostrarList ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
+    .clicked {
+        background-color: #16180e;
+        color: #59ac0c;
+        text-decoration: line-through;
+    }
 
-/* Darker background-color on hover */
-.mostrarList ul li:hover {
-  background: #ddd;
-}
+    /* Set all odd list items to a different color (zebra-stripes) */
+    .mostrarList ul li:nth-child(odd) {
+        background: #f9f9f9;
+    }
 
-/* When clicked on, add a background color and strike out text */
-.mostrarList ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
+    /* Darker background-color on hover */
+    .mostrarList ul li:hover {
+        background: #ddd;
+    }
 
-/* Add a "checked" mark when clicked on */
-.mostrarList ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
+    .removeButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .itemList {
+        display: flex;
+        align-items: center;
+    }
+
+    .itemList span {
+        flex-grow: 1;
+    }
+
+    .removeButton {
+        margin-left: 10px;
+        outline-color: #BD5532;
+        outline-offset: .5em;
+        font-family: system-ui, sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        margin: .1em;
+        transition: .3s linear, color 0s, background-color 0s;
+    }
+
+    .removeButton:hover {
+        background-color: #303f9f;
+        color: whitesmoke;
+    }
+
+   
 </style>
+
+<script>
+        function changeDecoration(event) {
+            var element = event.target;
+            element.classList.toggle('clicked');
+        }
+</script>
 
 <div class="container">
     <div class="titulo">
@@ -100,19 +126,28 @@
             <input type="text" name="item" placeholder="Enter new item">
             <button class = 'addButton' type="submit">Add</button>
             {% if message %}
-                <p>{{ message }}</p>
+                <p >{{ message }}</p>
             {% endif %}
         </form>
     </div>
     
 
     <div class="mostrarList">
-        <ul>
+        <ul id="todaLaLista">
             {% for item in my_list %}
-                <li>{{ item }}</li>
+                <li class="itemList">
+                    <span>{{ item }}</span>
+                    <form method="GET" action="{% url 'toDoList' %}">
+                        <input type="hidden" name="remove_item" value="{{ item }}">
+                        <button type="submit" class="removeButton">Remove</button>
+                    </form>
+                </li>
             {% endfor %}
         </ul>
     </div>
+    
+
+    
     
 </div>
 

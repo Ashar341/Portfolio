@@ -16,6 +16,11 @@ def toDoList(request):
             list.append(item)
         else:
             message = 'Submit an Entry'
+    elif request.method == 'GET':
+        if 'remove_item' in request.GET:
+            item = request.GET['remove_item'] 
+            if item in list:
+                list.remove(item)
     return render(request, 'toDoList.html',{'my_list':list})
     
 
