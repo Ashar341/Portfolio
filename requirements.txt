@@ -3,7 +3,7 @@ certifi==2022.12.7
 chardet==3.0.4
 distlib==0.3.6
 dj-database-url==1.2.0
-Django==4.1.7
+Django==4.1.10
 django-heroku==0.3.1
 django-on-heroku==1.1.2
 filelock==3.9.0
