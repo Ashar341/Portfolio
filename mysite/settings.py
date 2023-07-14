@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xkl*4dicm!#tdv2f0dh7%wxlo$_r)#%hsrj!elo&*fsjc3c*y6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfoliojesusloya.herokuapp.com',
+ALLOWED_HOSTS = ['portofoliojesusloya-eb5982abd220.herokuapp.com',
                  'https://portfoliodanielloya.herokuapp.com', 
                  'https://git.heroku.com/portofoliojesusloya.git',
                  ]
