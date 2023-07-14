@@ -119,6 +119,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+#Agregando valores para activar el csrf token
+
+
+
+CSRF_COOKIE_SECURE = True  # Set to False if not using HTTPS in development
+CSRF_COOKIE_HTTPONLY = True  # Recommended for added security
+
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
