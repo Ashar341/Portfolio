@@ -1,21 +1,19 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
-{% block content %} 
+{% block content %}
 <!-- El dia que puedas usar esto, lo usas, pero por el momento sigue insertando todo el css aqui en el mismo html-->
 
 <link rel="stylesheet" type="text/css" href="{% static '/static/home/home.css' %}">
 
 <style>
-
   * {
     margin: 0;
     padding: 0;
   }
 
-  body{
+  body {
     height: 100vh;
     overflow: hidden;
   }
@@ -29,210 +27,33 @@
     scroll-snap-type: y mandatory;
   }
 
+  .top-part {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 
-  section{
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: center;
+    padding: 20px;
+    margin: 20px;
   }
-
-  .container{
-    justify-content: center;
-    align-items: center;
-  }
-  .navarToErase {
-    position: sticky;
-    top: 20;
-    padding-top: 20;
-    z-index: 1;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    background-color: rgb(240, 233, 233);
-  }
-
-  .navarToErase ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .navarToErase ul li {
-    margin: 0 1rem;
-    padding: 1rem;
-  }
-
-  .navarToErase ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000000;
-  }
-
-  .top-part{
-    display: flex;
-    flex-direction:row;
-    min-height: 400px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  
-  .image {
-    background-color: rgb(184, 255, 247);
-    background: radial-gradient(circle at center,rgba(184, 255, 247, 0.5) 0%, rgba(255,255, 255, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    position: relative;
-  }
-
-  .photo {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3.5px solid black;
-    z-index: 2;
-  }
-
-  .bckgroung{
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    object-fit: cover;
-    z-index: 1;
-
-    animation-name: rotate;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-
-  @keyframes rotate{
-
-    100%{
-      transform:rotate(360deg);
-    }
-  }
-  .content {
-    width: 50%;
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
-  }
-
-  .content > .m-2 {
-    text-align: justify;
-    
-    
-  }
-
-  .intro{
-    text-align: justify;
-    font-weight: bold;
-    font-size: large;
-    color: rgb(255, 255, 255);
-    background-color: linear-gradient(to bottom, red, blue);;
-  }
-
-  .intro > h2{
-    text-align: center;
-  }
-  .sublime{
-    text-align: center;
-  }
-
-  .middle-part{
-    padding: 30;
-  }
-
-  .d-block{
-    width: 400px;
-    height: 500px;
-  }
-  .title_apps{
-    text-align: center;
-    font-weight: bolder;
-    color: rgb(247, 247, 247);
-    padding-bottom: 20px;
-    
-  }
-
-  .bottom{
-    color: rgb(247, 247, 247);
-
-    align-items: center;
-    align-content: center;
-  }
-
-  .contact{
-    background-color: #fdd835;
-
-    
-  }
-
-  .contact-bottom{
-    display:static;
-    font-size: larger;
-    background-color: #283593;
-  }
-
-  .contact-bottom > p {
-    color: rgb(205, 203, 223);
-    font-weight: bold;
-    font-size: larger;
-    text-size-adjust: 18px;
-  }
-
-  #contact{
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-
-  }
-  .media{
-    color: rgb(230, 229, 236);
-    text-decoration: solid;
-    text-align: right;
-    background-color: #3949ab;
-  }
-
-  .media span {
-    color: rgb(237, 237, 243);
-  }
-
-
-  
 </style>
 
 <div class="body">
-
-  <div class="container">
-    <nav class="navarToErase">
-    
-      <ul>
-        <li><a href="##top-part">Top</a></li>
-        <li><a href="##Intro" >Introduction</a></li>
-        <li><a href="##middle-part" >Apps</a></li>
-        <li><a href="##bottom-part" >Contact</a></li>
-      </ul>
-    
-    </nav>
-  </div>
-  
-
-
   <section class="top-part" id="#top-part">
-    
+
     <div class="image">
       <img src="/images/photo5131864922739812969 (1).jpg" alt="picture" class="photo">
       <img src="/images/163-1631155_cool-backgrounds-for-profile.jpg" alt="backgr" class="bckgroung">
@@ -244,25 +65,27 @@
           I am Jesus Loya and this is my first portfolio
         </h1>
       </div>
+      <div class="explanation">
+        <p>
+          I am currently a programmer analyst workign with Jabil. I have experience working as Full-Stack developer. I
+          have knowledge using .NET 8 using razor pages, .NET core & Xamarin, besides as Python and java for Back-End.
+          Meanwhile for Front-End tehcnology i have knowledge in HTML 5, CSS, Javascript, & React.
+        </p>
+      </div>
     </div>
-    
+
   </section>
-  
+
   <section class="intro" id="#Intro">
     <h2>Presentation</h2>
-      <div class="m-2">
-        <p class="card-text">
-          My name is Jesus and I hold a Bachelor's Degree in Chemical Engineering, as well as a Master's Degree. I'm passionate about many different fields, including environmentalism, quality control, and computer science.
+    <div class="m-2">
 
-          I also have experience with coding and recently created this portfolio from scratch using Django. In terms of programming languages, I am proficient in both Python and Java. In Python, I have expertise in using pandas, Numpy, Django, Flask, and CVV2. For Java, I know how to use spring-boot and combine it with Angular. Additionally, I'm skilled in using HTML and CSS with Angular.
-
-          I'm always eager to expand my knowledge and skills, and am excited to continue exploring different areas of interest in the future.
-        </p>
-        <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
-      </div>
+      <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
+    </div>
   </section>
-  
-  <hr class="mb-3 col-md-10 offset-md-1">
+
+  <hr>
+
   <section class="middle-part" id="#middle-part">
     <div class="middle-part">
       <div>
@@ -272,66 +95,79 @@
       </div>
       <!-- Para introducir el carrusel-->
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <a href="{% url 'resume_view' %}">
-                <img src="https://as2.ftcdn.net/v2/jpg/02/42/15/27/1000_F_242152790_eITHdgyD7AR6rhzMwWrukyCyMNPmzS8U.jpg" class="d-block w-100" width="600" height="500" alt="Resume">
-              </a>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="display-4">Professional Resume</h5>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <a href="{% url 'blogbase' %}">
-                  <img src="https://akus.b-cdn.net/imagenes/articulos/blog.jpg" class="d-block w-100" width="600" height="500" alt="Blog">
-              </a>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="display-4">Blog</h5>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <a href="{% url 'thesaurus_view' %}">
-                  <img src="https://www.collinsdictionary.com/images/full/thesaurus_23868640.jpg" class="d-block w-100" width="600" height="500" alt="thesaurus">
-              </a>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="display-4">Thesaurus</h5>
-              </div>
-            </div>
-            <div class="carousel-item" >
-              <a href="{% url 'qrGenerator_view' %}">
-                <img src="https://1757140519.rsc.cdn77.org/blog/wp-content/uploads/sites/4/2020/04/qr_vs_line_code.png" class="d-block w-100" width="600" height="500" alt="qrGenerator">
-              </a>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="display-4">QR Code Generator</h5>
-              </div>
-            </div>
-            <div class="carousel-item" >
-              <a href="{% url 'toDoList' %}">
-                <img src="https://www.creativefabrica.com/wp-content/uploads/2021/12/08/1638980093/To-do-list-template-black-version-580x386.jpg" class="d-block w-100" width="600" height="500" alt="qrGenerator">
-              </a>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="display-4">To do List</h5>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
         </div>
-        <hr class="mb-3 col-md-10 offset-md-1">
-        <div class="mb-3 col-md-10 offset-md-1">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <a href="{% url 'resume_view' %}">
+              <img src="https://as2.ftcdn.net/v2/jpg/02/42/15/27/1000_F_242152790_eITHdgyD7AR6rhzMwWrukyCyMNPmzS8U.jpg"
+                class="d-block w-100" width="600" height="500" alt="Resume">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Professional Resume</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'blogbase' %}">
+              <img src="https://akus.b-cdn.net/imagenes/articulos/blog.jpg" class="d-block w-100" width="600"
+                height="500" alt="Blog">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Blog</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'thesaurus_view' %}">
+              <img src="https://www.collinsdictionary.com/images/full/thesaurus_23868640.jpg" class="d-block w-100"
+                width="600" height="500" alt="thesaurus">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">Thesaurus</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'qrGenerator_view' %}">
+              <img src="https://1757140519.rsc.cdn77.org/blog/wp-content/uploads/sites/4/2020/04/qr_vs_line_code.png"
+                class="d-block w-100" width="600" height="500" alt="qrGenerator">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">QR Code Generator</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'toDoList' %}">
+              <img
+                src="https://www.creativefabrica.com/wp-content/uploads/2021/12/08/1638980093/To-do-list-template-black-version-580x386.jpg"
+                class="d-block w-100" width="600" height="500" alt="qrGenerator">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="display-4">To do List</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr class="mb-3 col-md-10 offset-md-1">
+      <div class="mb-3 col-md-10 offset-md-1">
       </div>
     </div>
   </section>
@@ -347,16 +183,19 @@
       <div class="media">
         <div class="call"><a href="tel: 614-213-9092"><i class="fas fa-phone"></i><span>614-213-9092</span></a></div>
         <br>
-        <div class="adress"><a href="https://www.google.com.mx/maps/place/Chihuahua,+Chih./@28.6710638,-106.134658,12z/data=!3m1!4b1!4m5!3m4!1s0x86ea449d5d484033:0xb7f1a7a706dd1d7b!8m2!3d28.6329957!4d-106.0691004"><i class="fas fa-map-marker"></i><span>Chihuahua,Mexico</span></a></div>
+        <div class="adress"><a
+            href="https://www.google.com.mx/maps/place/Chihuahua,+Chih./@28.6710638,-106.134658,12z/data=!3m1!4b1!4m5!3m4!1s0x86ea449d5d484033:0xb7f1a7a706dd1d7b!8m2!3d28.6329957!4d-106.0691004"><i
+              class="fas fa-map-marker"></i><span>Chihuahua,Mexico</span></a></div>
         <br>
         <div class="email"><a href="danilloya341@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a></div>
         <br>
-        <div class="website"><a href="https://www.linkedin.com/in/jesus-daniel-loya-ramirez-604061151/"><i class="fas fa-home"></i><span>LinkedIn</span></a></div>
+        <div class="website"><a href="https://www.linkedin.com/in/jesus-daniel-loya-ramirez-604061151/"><i
+              class="fas fa-home"></i><span>LinkedIn</span></a></div>
         <br>
       </div>
 
     </div>
-    
+
   </section>
 
 </div>

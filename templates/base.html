@@ -1,57 +1,105 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <title> Blog Post</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title> Blog Post</title>
 
-            body{
-                background-image: url(/images/fondo.png);
-                background-repeat: no-repeat;
-                background-size: cover;
+    <style>
+        .header {
+            background-color: whitesmoke;
+            width: 100%;
+            padding-block: 25px;
+            z-index: 4;
+        }
+
+        .header.active {
+            position: fixed;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
             }
-            .navbar-nav {
-                color: white;
-            }
 
-            #navbarResponsive{
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
+            100% {
+                transform: translateY(0);
             }
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            border-radius: 20px;
+            border: 2px solid black;
+            padding: min(15px,5%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .navbar-list {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .nav-item:hover {
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        }
+
+        .nav-item a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar-list {
+            margin-block-end: auto;
+        }
+
+        .logo{
+            font-size:2vw;
+            color: black;  
+            text-transform: none;
+            text-decoration: none;
+            font-weight: bolder;
             
-            .navbar-brand{
-                transition: backgroun-color 0.3s ease;
-            }
-            .navbar-brand:hover{
-                box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.5);
-                background-color: #ffb300;
-            }
+        }
+    </style>
+</head>
 
-            .navbar-brand:active{
-                background-color: #1a237e;
-            }
-
-
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-xl navbar-light sticky-top"  style="background-color: white;" id="mainNav">
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <nav class="navbar bg-body-tertiary">
-                    <div class="container-fluid">
-                      <a class="navbar-brand" href="{% url 'home_view' %}">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4365/4365933.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                        Portfolio
-                      </a>
-                    </div>
-                </nav>
-                <ul class="navbar-nav ml-auto">
+<body>
+    <header class="header" da>
+        <div class="container">
+            <a class="logo" href="{% url 'home_view' %}">
+                <img src="https://cdn-icons-png.flaticon.com/512/4365/4365933.png" alt="Logo" width="30" height="24">
+                Daniel Loya
+            </a>
+            <nav class="navbar">
+                <ul class="navbar-list">
                     <li class="nav-item">
                         <a class="navbar-brand p-2" href="{% url 'home_view' %}">Home</a>
                     </li>
@@ -70,15 +118,12 @@
                     <li class="nav-item">
                         <a class="navbar-brand p-2" href="{% url 'toDoList' %}">To Do list</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand p-2" href="{% url 'about_view' %}">About Us</a>
-                    </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock content %}
+</body>
 
-{% block content %}
-{% endblock content %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </body>
 </html>
