@@ -16,6 +16,7 @@
   body {
     height: 100vh;
     overflow: hidden;
+    background-color: whitesmoke;
   }
 
   .body {
@@ -31,6 +32,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    background-color: whitesmoke;
   }
 
   .image {
@@ -48,6 +50,20 @@
     justify-content: center;
     padding: 20px;
     margin: 20px;
+  }
+
+  .intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 15px;
+    margin-bottom: 20px;
+    padding: 0px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 </style>
 
@@ -68,8 +84,8 @@
       <div class="explanation">
         <p>
           I am currently a programmer analyst workign with Jabil. I have experience working as Full-Stack developer. I
-          have knowledge using .NET 8 using razor pages, .NET core & Xamarin, besides as Python and java for Back-End.
-          Meanwhile for Front-End tehcnology i have knowledge in HTML 5, CSS, Javascript, & React.
+          have knowledge using .NET 8 using razor pages, .NET core & Xamarin, besides as Python and java as Back-End.
+          Meanwhile in Front-End tehcnology I have knowledge in HTML 5, CSS, Javascript, & React.
         </p>
       </div>
     </div>
@@ -78,22 +94,18 @@
 
   <section class="intro" id="#Intro">
     <h2>Presentation</h2>
-    <div class="m-2">
+    <div class=>
 
-      <h4 class="sublime">Here I can show you one of the apps that I have been created along the time</h4>
+      <h3 class="sublime">Here are some projects that I have created</h3>
     </div>
   </section>
 
   <hr>
 
   <section class="middle-part" id="#middle-part">
-    <div class="middle-part">
-      <div>
-        <h2 class="title_apps">
-          App developed by me until the momment
-        </h2>
-      </div>
+    <div class="middle-content">
       <!-- Para introducir el carrusel-->
+       <!--Borrar esta parte ya que solo es el indicador, lo otro son las imagenes-->
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -107,6 +119,7 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
             aria-label="Slide 5"></button>
         </div>
+        <!--Esto contiene las imagenes convertir a div o a lo que se requiera para ser usado en tipo card-->
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
             <a href="{% url 'resume_view' %}">
